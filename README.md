@@ -57,7 +57,3 @@ Better docs on how to set up your buckets and the best setup practices for both 
 ### 6. License
 
 This project is open-sourced under the MIT license. Feel free to use, modify, and distribute it as you see fit.
-
-```
-
-```
