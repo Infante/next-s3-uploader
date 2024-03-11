@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Image Uploader Component for Next.js
 
-## Getting Started
+This Image Uploader component allows easy integration of image uploading capabilities into your Next.js projects, with support for AWS S3 and DigitalOcean Spaces. It comes with a simple yet powerful API route setup for handling uploads and supports custom domains for both storage services.
 
-First, run the development server:
+## How to Use
+
+### 1. Integration into Your Project
+
+-   Copy the `ImageUploader` component into your project's component directory.
+-   Copy the `/api/upload` route into your project's pages/api directory.
+-   This example uses Tailwind CSS for styling and leverages Next.js's API routes for backend logic.
+
+### 2. Install Dependencies
+
+Install the necessary dependencies by running:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install @aws-sdk/client-s3 aws-sdk
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn add @aws-sdk/client-s3 aws-sdk
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 3. Configuration
 
-## Learn More
+Configure your project to use either AWS S3 or DigitalOcean Spaces by filling in the `.env.local` file with the appropriate values:
 
-To learn more about Next.js, take a look at the following resources:
+# .env.local example configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ACCESS_KEY_ID=DO004HGAJTLNNM92T678
+SECRET_ACCESS_KEY=Rqaf0RUX6oG+rmFS3GVvUEJP0dBcDm34eRjPoaVT0R8
+REGION=nyc3
+BUCKET_NAME=bucket-name
+DOMAIN= # Optional, set this if you're using a custom domain
+STORAGE_SERVICE=DIGITALOCEAN # Use AWS or DO depending on your service
+SPACES_ENDPOINT=nyc3.digitaloceanspaces.com # Required if using DigitalOcean
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Ensure you replace the placeholder values with your actual credentials and configurations.
 
-## Deploy on Vercel
+### 4. Coming Soon
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Better docs on how to set up your buckets and the best setup practices for both AWS and DigitalOcean will be provided in future updates.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 5. Features Coming Soon
+
+-   Multi-image upload: Enhancements to support uploading multiple images simultaneously.
+-   Pre-styled component: A version of the ImageUploader component that comes with predefined styles.
+
+### 6. License
+
+This project is open-sourced under the MIT license. Feel free to use, modify, and distribute it as you see fit.
